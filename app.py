@@ -51,5 +51,8 @@ prediction = round(response.json()['prediction'], 2)
 
 st.markdown(f'The predict price is {prediction} dollars')
 
-image = Image.open('image.png')
-st.image(image, caption='map', use_column_width=False)
+dict = {'lat': [pickup_latitude, dropoff_latitude],'lon': [pickup_longitude, dropoff_longitude]}
+
+df = pd.DataFrame(dict)
+
+st.map(df)
