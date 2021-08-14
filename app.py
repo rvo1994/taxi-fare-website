@@ -51,5 +51,5 @@ prediction = round(response.json()['prediction'], 2)
 
 st.markdown(f'The predict price is {prediction} dollars')
 
-image = Image.open('images.png')
+image = Image.open('image.png')
 st.image(image, caption='map', use_column_width=False)
