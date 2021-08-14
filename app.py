@@ -49,3 +49,8 @@ response = requests.get(url)
 prediction = round(response.json()['prediction'], 2)
 
 st.markdown(f'The predict price is {prediction} dollars')
+
+@st.cache
+from PIL import Image
+image = Image.open('images.png')
+st.image(image, caption='map', use_column_width=False)
