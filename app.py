@@ -4,6 +4,13 @@ import requests
 from PIL import Image
 import pandas as pd
 
+# page conf
+st.set_page_config(
+    page_title="NY Taxi Fare Prediction",
+    page_icon=":snake:",
+    layout="centered", # wide
+    initial_sidebar_state="auto") # collapsed
+
 '''
 # New York City Taxi Fare Predictor
 
@@ -23,9 +30,7 @@ url = f'https://taxifare.lewagon.ai/predict?pickup_datetime={pickup_datetime}&pi
 
 response = requests.get(url)
 
-prediction = round(response.json()['prediction'], 2)
-
-st.write(f"The predicted price for this ride is '{prediction}' €")
+st.write('The estimated cost of your ride is: ', round(response.json()['prediction'],2), '$')
 
 dict = {'lat': [pickup_latitude, dropoff_latitude],'lon': [pickup_longitude, dropoff_longitude]}
 
