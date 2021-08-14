@@ -64,5 +64,5 @@ if st.checkbox('Show map', False):
     st.map(df)
 else:
     from PIL import Image
-    image = Image.open('images/map.png')
+    image = Image.open('image.png')
     st.image(image, caption='map', use_column_width=False)
